@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="myscripts.js"></script>
+  <title>Abastecimento BRASPRESS</title>
+</head>
+
+<body>
+
+  <img src="imgs/logo.png" width="430" height="70" alt="logo">
+
+  <form action="https://api.sheetmonkey.io/form/aTZfQKR31uv7q4hPitscsn" method="post">
+    <!-- API Monkey Sheet -->
+
+
+    <!-- Títulos-->
+    <div>
+      <div id="container-a"></div>
+      <h1 id="title">FORMULÁRIO DE ABASTECIMENTO INTERNO</h1>
+      <p id="subtitle">Conservação de Frotas</p>
+    </div>
+
+    <!-- Informações do abastecimento -->
+    <fieldset class="grupo">
+      <div class="campo">
+        <label for="Abastecedor"><strong>Abastecedor</strong></label>
+        <label>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Alan Ferreira dos Santos" checked>Alan Ferreira dos Santos<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Antônio Fabio Vieira">Antônio Fabio Vieira<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Carlos Elias de Jesus">Carlos Elias de Jesus<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="João Alves da Silva">João Alves da Silva<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Juliano Francisco de Luna Roza">Juliano Francisco de Luna Roza<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Paulo Rodrigues dos Santos">Paulo Rodrigues dos Santos<br>
+          <input type="radio" name="abastecedor" id="abastecedor" value="Silas Rodrigues Noronha">Silas Rodrigues Noronha<br>
+        </label><br>
+        <div class="campo">
+          <label for="matric2"><strong>Matrícula do Motorista</strong></label>
+          <input type="number" name="matric2" id="matric2" required><br>
+        </div>
+        <div class="campo">
+          <label for="nome"><strong>Nº de Frota</strong></label>
+          <input type="text" name="frota" id="frota" maxlength="5" required>
+        </div><br>
+        <div class="campo">
+          <label for="nome"><strong>Placa do veículo</strong></label>
+          <input type="text" name="frota" id="frota" maxlength="7" required>
+        </div><br>
+        <div class="campo">
+          <label for="hodometro1"><strong>Hodômetro do veículo</strong></label>
+          <input type="number" name="hodometro1" id="hodometro1" required><br>
+        </div>
+
+
+        <!-- Abastecimento de tanques -->
+        <label for="bombas"><strong>Selecione a bomba utilizada</strong></label>
+        <select name="bomba" id="bomba">
+          <option selected disabled value="">Selecione</option>
+          <option value="Bomba 1">Bomba 1</option>
+          <option value="Bomba 2">Bomba 2</option>
+          <option value="Bomba 3">Bomba 3</option><br>
+        </select><br>
+        <div class="campo">
+          <label for="nome"><strong>Litros abastecidos</strong></label>
+          <input type="number" name="diesel1" id="diesel1" step=".01" required>
+        </div><br>
+        <div class="campo">
+          <label for="tanque_adicional"><strong>Abastecer outro tanque?</strong></label>
+          <input type="radio" onclick="javascript:yesnoCheck2();" name="Abastecer outro tanque?" id="noCheck2" checked>Não
+          <input type="radio" onclick="javascript:yesnoCheck2();" name="Abastecer outro tanque?" id="yesCheck2" />Sim<br>
+
+          <div id="ifYes" style="display:none">Insira a quantidade de litros de diesel:
+            <input type='number' id='sim_diesel2' name='sim_diesel2' step=".01" />
+          </div><br>
+
+
+
+          <!-- Abastecimento de arla -->
+          <label for="arla"><strong>Abastecimento de Arla32?</strong></label>
+          <input type="radio" onclick="javascript:yesnoCheck();" name="Abasteceu arla?" id="noCheckA" checked>Não
+          <input type="radio" onclick="javascript:yesnoCheck();" name="Abasteceu arla?" id="yesCheckA" />Sim<br>
+
+          <div id="ifYesArla" style="display:none">Insira a quantidade de litros de arla:
+            <input type='text' id='sim_arla1' name='sim_arla1' step=".01" />
+          </div><br>
+
+
+
+          <!-- Abastecer outro veículo?-->
+          <label for="veículo_adicional"><strong>Abastecer outro veículo?</strong></label>
+          <input type="radio" onclick="javascript:yesnoCheckV();" name="Outro veículo?" id="noCheckV" checked>Não
+          <input type="radio" onclick="javascript:yesnoCheckV();" name="Outro veículo?" id="yesCheckV" />Sim<br>
+          <br>
+          <div id="ifYesV" style="display:none">
+            <label for="matric"><strong>Matrícula do Motorista</strong></label>
+            <input type="number" name="matric" id="matric">
+            <div class="campo"><br>
+              <label for="nome"><strong>Nº de Frota</strong></label>
+              <input type="text" name="frota2" id="frota2" maxlength="5">
+              <div class="campo"><br>
+                <label for="nome"><strong>Placa do veículo</strong></label>
+                <input type="text" name="frota" id="frota" maxlength="7" required>
+              </div><br>
+              <label for="hodometro2"><strong>Hodômetro do veículo</strong></label>
+              <input type="number" name="hodometro2" id="hodometro2" required><br>
+            </div>
+            <div class="campo">
+              <label for="bombas"><strong>Selecione a bomba utilizada</strong></label>
+              <select name="bombas2" id="bombas2">
+                <option selected disabled value="">Selecione</option>
+                <option value="Bomba 1">Bomba 1</option>
+                <option value="Bomba 2">Bomba 2</option>
+                <option value="Bomba 3">Bomba 3</option>
+              </select><br>
+              <label for="nome"><strong>Litros abastecidos</strong></label>
+              <input type="number" name="diesel2" id="diesel2" step=".01">
+
+
+
+              <div class="campo"><br>
+                <label for="tanque_adicional"><strong>Abastecer outro tanque?</strong></label>
+
+                <input type="radio" onclick="javascript:yesnoCheck3();" name="Outro tanque? Veículo 2" id="noCheck3" checked />Não<br>
+                <input type="radio" onclick="javascript:yesnoCheck3();" name="Outro tanque? Veículo 2" id="yesCheck3" />Sim<br>
+
+                <div id="ifYes3" style="display:none">Insira a quantidade de litros de diesel:
+                  <input type='number' id='sim_diesel4' name='sim_diesel4' step=".01" />
+                </div><br>
+
+
+
+                <!-- Abastecimento de arla -->
+                <label for="arla2"><strong>Abastecimento de Arla32?</strong></label>
+                <input type="radio" onclick="javascript:yesnoCheckA2();" name="Abasteceu arla? 2" id="noCheckA2" checked>Não<br>
+                <input type="radio" onclick="javascript:yesnoCheckA2();" name="Abasteceu arla? 2" id="yesCheckA2" />Sim<br>
+
+                <div id="ifYesA2" style="display:none">Insira a quantidade de litros de arla:
+                  <input type='number' id='sim_arla2' name='sim_arla2' step=".01" />
+                </div><br>
+
+
+              </div>
+
+
+
+
+
+    </fieldset>
+    <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+    <input type="submit" value="Enviar" onclick="javascript:notifyMe();" />
+  </form>
+</body>
+
+</html>
